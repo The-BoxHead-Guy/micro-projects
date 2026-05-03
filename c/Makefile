@@ -3,14 +3,16 @@ TARGET = ../bin/hello
 TARGET_CONDITIONALS = ../bin/conditionals
 TARGET_COMPARE = ../bin/compare
 TARGET_AGREE = ../bin/agree
+TARGET_CAT = ../bin/cat
 
 # The source file(s) to compile
 SRC = hello.c
 SRC_CONDITIONALS = conditionals.c
 SRC_COMPARE = compare.c
 SRC_AGREE = agree.c
+SRC_CAT = cat.c
 
-all: $(TARGET) $(TARGET_CONDITIONALS) $(TARGET_COMPARE) $(TARGET_AGREE)
+all: $(TARGET) $(TARGET_CONDITIONALS) $(TARGET_COMPARE) $(TARGET_AGREE) $(TARGET_CAT)
 
 $(TARGET): $(SRC)
 	gcc $(SRC) -o $(TARGET) -lcs50
@@ -24,5 +26,8 @@ $(TARGET_COMPARE): $(SRC_COMPARE)
 $(TARGET_AGREE): $(SRC_AGREE)
 	gcc $(SRC_AGREE) -o $(TARGET_AGREE) -lcs50
 
+$(TARGET_CAT): $(SRC_CAT)
+	gcc $(SRC_CAT) -o $(TARGET_CAT) -lcs50
+
 clean:
-	rm -f $(TARGET) $(TARGET_CONDITIONALS) $(TARGET_COMPARE) $(TARGET_AGREE)
+	rm -f $(TARGET) $(TARGET_CONDITIONALS) $(TARGET_COMPARE) $(TARGET_AGREE) $(TARGET_CAT)
