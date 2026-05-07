@@ -26,7 +26,7 @@ $(TARGET_COMPARE): $(SRC_COMPARE)
 	gcc $(SRC_COMPARE) -o $(TARGET_COMPARE) -lcs50
 
 $(TARGET_AGREE): $(SRC_AGREE)
-	gcc $(SRC_AGREE) -o $(TARGET_AGREE) -lcs50
+	gcc -g $(SRC_AGREE) -o $(TARGET_AGREE) -lcs50
 
 $(TARGET_CAT): $(SRC_CAT)
 	gcc $(SRC_CAT) -o $(TARGET_CAT) -lcs50
