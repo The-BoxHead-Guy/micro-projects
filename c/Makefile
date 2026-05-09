@@ -1,10 +1,15 @@
-# Custom name for the final executables
-TARGET = ../bin/hello
-TARGET_CONDITIONALS = ../bin/conditionals
-TARGET_COMPARE = ../bin/compare
-TARGET_AGREE = ../bin/agree
-TARGET_CAT = ../bin/cat
-TARGET_MARIO = ../bin/mario
+# Macros
+BIN_DIR = ../bin
+COMPILER = gcc
+CS50_LIB = -lcs50
+
+# Custom names for the final executables
+TARGET = $(BIN_DIR)/hello
+TARGET_CONDITIONALS = $(BIN_DIR)/conditionals
+TARGET_COMPARE = $(BIN_DIR)/compare
+TARGET_AGREE = $(BIN_DIR)/agree
+TARGET_CAT = $(BIN_DIR)/cat
+TARGET_MARIO = $(BIN_DIR)/mario
 
 # The source file(s) to compile
 SRC = hello.c
@@ -14,25 +19,29 @@ SRC_AGREE = agree.c
 SRC_CAT = cat.c
 SRC_MARIO = mario.c
 
-all: $(TARGET) $(TARGET_CONDITIONALS) $(TARGET_COMPARE) $(TARGET_AGREE) $(TARGET_CAT) $(TARGET_MARIO)
+# Allowed source files
+ALLOWED = $(TARGET) $(TARGET_CONDITIONALS) $(TARGET_COMPARE) $(TARGET_AGREE) $(TARGET_CAT) $(TARGET_MARIO)
 
+all: $(ALLOWED)
+
+# Executables
 $(TARGET): $(SRC)
-	gcc $(SRC) -o $(TARGET) -lcs50
+	$(COMPILER) $(SRC) -o $(TARGET) $(CS50_LIB)
 
 $(TARGET_CONDITIONALS): $(SRC_CONDITIONALS)
-	gcc $(SRC_CONDITIONALS) -o $(TARGET_CONDITIONALS) -lcs50
+	$(COMPILER) $(SRC_CONDITIONALS) -o $(TARGET_CONDITIONALS) $(CS50_LIB)
 
 $(TARGET_COMPARE): $(SRC_COMPARE)
-	gcc $(SRC_COMPARE) -o $(TARGET_COMPARE) -lcs50
+	$(COMPILER) $(SRC_COMPARE) -o $(TARGET_COMPARE) $(CS50_LIB)
 
 $(TARGET_AGREE): $(SRC_AGREE)
-	gcc -g $(SRC_AGREE) -o $(TARGET_AGREE) -lcs50
+	$(COMPILER) -g $(SRC_AGREE) -o $(TARGET_AGREE) $(CS50_LIB)
 
 $(TARGET_CAT): $(SRC_CAT)
-	gcc $(SRC_CAT) -o $(TARGET_CAT) -lcs50
+	$(COMPILER) $(SRC_CAT) -o $(TARGET_CAT) $(CS50_LIB)
 
 $(TARGET_MARIO): $(SRC_MARIO)
-	gcc $(SRC_MARIO) -o $(TARGET_MARIO) -lcs50
+	$(COMPILER) $(SRC_MARIO) -o $(TARGET_MARIO) $(CS50_LIB)
 
 clean:
-	rm -f $(TARGET) $(TARGET_CONDITIONALS) $(TARGET_COMPARE) $(TARGET_AGREE) $(TARGET_CAT) $(TARGET_MARIO)
+	rm -f $(ALLOWED)
