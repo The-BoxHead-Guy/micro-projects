@@ -10,6 +10,7 @@ TARGET_COMPARE = $(BIN_DIR)/compare
 TARGET_AGREE = $(BIN_DIR)/agree
 TARGET_CAT = $(BIN_DIR)/cat
 TARGET_MARIO = $(BIN_DIR)/mario
+TARGET_MARIO = $(BIN_DIR)/hi
 
 # The source file(s) to compile
 SRC = hello.c
@@ -18,6 +19,7 @@ SRC_COMPARE = compare.c
 SRC_AGREE = agree.c
 SRC_CAT = cat.c
 SRC_MARIO = mario.c
+SRC_MARIO = hi.c
 
 # Allowed source files
 ALLOWED = $(TARGET) $(TARGET_CONDITIONALS) $(TARGET_COMPARE) $(TARGET_AGREE) $(TARGET_CAT) $(TARGET_MARIO)
@@ -42,6 +44,9 @@ $(TARGET_CAT): $(SRC_CAT)
 
 $(TARGET_MARIO): $(SRC_MARIO)
 	$(COMPILER) $(SRC_MARIO) -o $(TARGET_MARIO) $(CS50_LIB)
+
+$(TARGET_HI): $(SRC_HI)
+	$(COMPILER) $(SRC_HI) -o $(TARGET_HI) $(CS50_LIB)
 
 clean:
 	rm -f $(ALLOWED)
