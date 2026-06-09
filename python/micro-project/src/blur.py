@@ -1,10 +1,7 @@
-from pathlib import Path
 from PIL import Image, ImageFilter
 
-assets = Path(__file__).resolve().parent.parent / "assets"
+from paths import ASSETS
 
-print(assets)
-
-before = Image.open(assets / "landscape.bmp")
+before = Image.open(ASSETS / "landscape.bmp")
 after = before.filter(ImageFilter.BoxBlur(10))
-after.save(assets / "blurred.bmp")
+after.save(ASSETS / "blurred.bmp")
