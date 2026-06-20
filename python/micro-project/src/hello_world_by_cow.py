@@ -1,4 +1,3 @@
 import cowsay
 
-
-cowsay.cow("Hello, World!")
+cowsay.cow("Hello, World!")  # pyright: ignore[reportAttributeAccessIssue]

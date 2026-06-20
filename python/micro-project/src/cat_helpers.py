@@ -8,7 +8,7 @@ def print_header(type):
 
 def ask_user_for_times():
     try:
-        return int(input("How many times should the cat say \"Meow\"? \n"))
+        return int(input('How many times should the cat say "Meow"? \n'))
     except ValueError:
         print("Please enter a number")
         return ask_user_for_times()
