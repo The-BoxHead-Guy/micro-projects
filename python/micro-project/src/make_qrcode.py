@@ -2,6 +2,6 @@ import qrcode
 
 img = qrcode.make("https://rutaweb.net/jhonleon")
 
-type(img)
+print(type(img))
 
-img.save("jhonleon.png", "PNG")  # pyright: ignore[reportArgumentType]
+img.save("jhonleon.png", "PNG")
