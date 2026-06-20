@@ -8,4 +8,5 @@ dependencies = [
     "cowsay>=6.1",
     "cs50>=9.5.0",
     "pillow>=12.2.0",
+    "qrcode>=8.2",
 ]
