@@ -7,10 +7,14 @@ def print_header(type):
 
 
 def ask_user_for_times():
-    return int(input("How many times should the cat say \"Meow\"? \n"))
+    try:
+        return int(input("How many times should the cat say \"Meow\"? \n"))
+    except ValueError:
+        print("Please enter a number")
+        return ask_user_for_times()
 
 
-def loop_using_while(times: int):
+def loop_using_while(times):
     i = 0
     while i < (times):
         print_cat()
