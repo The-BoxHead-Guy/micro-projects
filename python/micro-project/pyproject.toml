@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "cowsay>=6.1",
     "cs50>=9.5.0",
     "pillow>=12.2.0",
 ]
