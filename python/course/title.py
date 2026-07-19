@@ -22,3 +22,4 @@ email = "loGan@Gmail.com"
 email_splitted = email.strip().lower().split("@")
 
 print(email_splitted)
+print(f"Username: {email_splitted[0]}\nDomain: {email_splitted[1]}")
