@@ -16,3 +16,9 @@ quote_owner = "Winston S. Churchill"
 quote_full_message = f'{quote_owner} once said, "{quote}"'
 
 print(quote_full_message)
+
+# Email splitting
+email = "loGan@Gmail.com"
+email_splitted = email.strip().lower().split("@")
+
+print(email_splitted)
