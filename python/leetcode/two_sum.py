@@ -21,8 +21,6 @@ class Solution:
             if found_indexes:
                 break
 
-        print(found_indexes)
-
         return found_indexes
 
 
