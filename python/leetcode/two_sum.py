@@ -51,3 +51,9 @@ test_nums_3 = [3, 3]
 test_target_3 = 6
 
 solution.twoSum(test_nums_3, test_target_3)
+
+# Test case 3
+test_nums_4 = [10, 4, 3, 15, 6]
+test_target_4 = 9
+
+solution.twoSum(test_nums_4, test_target_4)
