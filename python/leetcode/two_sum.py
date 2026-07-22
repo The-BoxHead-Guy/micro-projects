@@ -1,7 +1,4 @@
 class Solution:
-    def print_test(self):
-        print("This is a test because I don't know how to use classes in python wtf")
-
     def sum_two_numbers(self, first, second) -> int:
         return first + second
 
