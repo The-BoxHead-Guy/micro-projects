@@ -45,12 +45,15 @@ class Solution:
     def addTwoNumbers(
         self, list1: LinkedList | None | list, list2: LinkedList | None | list
     ) -> LinkedList | None:
+
+        # We ensure the arguments are of the desired type
         if type(list1) is not LinkedList:
             list1 = LinkedList(list1)
 
         if type(list2) is not LinkedList:
             list2 = LinkedList(list2)
 
+        # Process the Linked List to get the list of nodes extracted
         arr_of_list_1 = []
         arr_of_list_2 = []
 
@@ -62,12 +65,11 @@ class Solution:
             for node in list2:
                 arr_of_list_2.append(node.value)
 
-        print(arr_of_list_1)
-        print(arr_of_list_2)
-
+        # Reverse order of the arrays to perform the operation
         arr_of_list_1.reverse()
         arr_of_list_2.reverse()
 
+        # Get the integers of the list
         int_of_list_1 = 0
         int_of_list_2 = 0
 
@@ -77,6 +79,7 @@ class Solution:
         for num in arr_of_list_2:
             int_of_list_2 = int_of_list_2 * 10 + num
 
+        # Remaining operations to get the sum of the numbers
         total_sum_of_linked_lists = int_of_list_1 + int_of_list_2
 
         reversed_total_sum = int(str(total_sum_of_linked_lists)[::-1])
@@ -97,9 +100,13 @@ data_case_2 = [5, 6, 4]
 print(solution_instance.addTwoNumbers(data_case_1, data_case_2))
 
 # Test case 2
-linked_list_ln1 = [0]
-linked_list_ln2 = [0]
+data_case_3 = [0]
+data_case_4 = [0]
+
+print(solution_instance.addTwoNumbers(data_case_3, data_case_4))
 
 # Test case 3
-linked_list_lc1 = [9, 9, 9, 9, 9, 9, 9]
-linked_list_lc2 = [9, 9, 9, 9]
+data_case_5 = [9, 9, 9, 9, 9, 9, 9]
+data_case_6 = [9, 9, 9, 9]
+
+print(solution_instance.addTwoNumbers(data_case_5, data_case_6))
