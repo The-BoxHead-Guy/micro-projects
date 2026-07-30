@@ -43,8 +43,14 @@ class LinkedList:
 
 class Solution:
     def addTwoNumbers(
-        self, list1: LinkedList | None, list2: LinkedList | None
+        self, list1: LinkedList | None | list, list2: LinkedList | None | list
     ) -> LinkedList | None:
+        if type(list1) is not LinkedList:
+            list1 = LinkedList(list1)
+
+        if type(list2) is not LinkedList:
+            list2 = LinkedList(list2)
+
         arr_of_list_1 = []
         arr_of_list_2 = []
 
@@ -86,12 +92,9 @@ solution_instance = Solution()
 data_case_1 = [2, 4, 3]
 data_case_2 = [5, 6, 4]
 
-linked_list_1 = LinkedList(data_case_1)
-linked_list_2 = LinkedList(data_case_2)
-
 # We first need to create the Linked List, as we only have the solution and ListNode
 
-print(solution_instance.addTwoNumbers(linked_list_1, linked_list_2))
+print(solution_instance.addTwoNumbers(data_case_1, data_case_2))
 
 # Test case 2
 linked_list_ln1 = [0]
