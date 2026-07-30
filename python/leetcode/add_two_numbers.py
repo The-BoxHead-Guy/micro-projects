@@ -1,13 +1,13 @@
 class ListNode:
-    def __init__(self, val, next=None):
-        self.val = val
+    def __init__(self, value, next=None):
+        self.value = value
         self.next = next
 
     def __repr__(self):
-        return self.val
+        return self.value
 
     def __str__(self):
-        return str(self.val)
+        return str(self.value)
 
 
 class LinkedList:
@@ -15,12 +15,12 @@ class LinkedList:
         self.head = None
 
         if nodes is not None:
-            node = ListNode(val=nodes.pop(0))
+            node = ListNode(value=nodes.pop(0))
 
             self.head = node
 
             for element in nodes:
-                node.next = ListNode(val=element)
+                node.next = ListNode(value=element)
                 node = node.next
 
     def __repr__(self):
@@ -28,7 +28,7 @@ class LinkedList:
         nodes = []
 
         while node is not None:
-            nodes.append(node.val)
+            nodes.append(node.value)
             node = node.next
 
         return str(nodes)
@@ -45,20 +45,39 @@ class Solution:
     def addTwoNumbers(
         self, list1: LinkedList | None, list2: LinkedList | None
     ) -> LinkedList | None:
+        arr_of_list_1 = []
+        arr_of_list_2 = []
 
-        # We sort the linked list first
-        print(list1)
-        print(list2)
+        if list1 is not None:
+            for node in list1:
+                arr_of_list_1.append(node.value)
 
-        # We received the non-empty ListNode
+        if list2 is not None:
+            for node in list2:
+                arr_of_list_2.append(node.value)
 
-        # We sort the List Node
+        print(arr_of_list_1)
+        print(arr_of_list_2)
 
-        # We add each number
+        arr_of_list_1.reverse()
+        arr_of_list_2.reverse()
 
-        # We return the result as a Linked List or as a ListNode
+        int_of_list_1 = 0
+        int_of_list_2 = 0
 
-        # return list_node
+        for num in arr_of_list_1:
+            int_of_list_1 = int_of_list_1 * 10 + num
+
+        for num in arr_of_list_2:
+            int_of_list_2 = int_of_list_2 * 10 + num
+
+        total_sum_of_linked_lists = int_of_list_1 + int_of_list_2
+
+        reversed_total_sum = int(str(total_sum_of_linked_lists)[::-1])
+
+        reversed_total_sum_list = [int(digit) for digit in str(reversed_total_sum)]
+
+        return LinkedList(reversed_total_sum_list)
 
 
 solution_instance = Solution()
