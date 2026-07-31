@@ -5,9 +5,6 @@ class ListNode:
 
 
 class Solution:
-    def from_list_to_integers(self, list: list):
-        return int("".join(map(str, list)))
-
     def addTwoNumbers(
         self, l1: ListNode | None, l2: ListNode | None
     ) -> ListNode | None:
@@ -26,8 +23,8 @@ class Solution:
             l2 = l2.next
 
         # Get the integers of the list
-        int_of_list_1 = self.from_list_to_integers(arr_of_list_1)
-        int_of_list_2 = self.from_list_to_integers(arr_of_list_2)
+        int_of_list_1 = int("".join(map(str, arr_of_list_1)))
+        int_of_list_2 = int("".join(map(str, arr_of_list_2)))
 
         # Remaining operations to get the sum of the numbers
         total_sum_of_linked_lists = int_of_list_1 + int_of_list_2
