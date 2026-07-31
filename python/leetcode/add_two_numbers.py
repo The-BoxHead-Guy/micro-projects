@@ -7,7 +7,7 @@ class ListNode:
 class Solution:
     def addTwoNumbers(
         self, l1: ListNode | None, l2: ListNode | None
-    ) -> list[ListNode] | None:
+    ) -> ListNode | None:
 
         # Process the Linked List to get the list of nodes extracted
         arr_of_list_1 = []
@@ -38,7 +38,7 @@ class Solution:
         # Remaining operations to get the sum of the numbers
         total_sum_of_linked_lists = int_of_list_1 + int_of_list_2
 
-        reversed_total_sum = int(str(total_sum_of_linked_lists)[::-1])
+        reversed_total_sum = str(total_sum_of_linked_lists)[::-1]
 
         reversed_total_sum_list = [int(digit) for digit in str(reversed_total_sum)]
 
@@ -52,27 +52,13 @@ class Solution:
         return head.next
 
 
-solution_instance = Solution()
+solution = Solution()
 
-# Test case 1
-# data_case_1 = [2, 4, 3]
-# data_case_2 = [5, 6, 4]
+edge_case_1 = ListNode(5, ListNode(6, None))
+edge_case_2 = ListNode(5, ListNode(4, ListNode(9, None)))
 
-data_case_1 = ListNode(2, ListNode(4, ListNode(3)))
-data_case_2 = ListNode(5, ListNode(6, ListNode(4)))
+edge_case_nodes = solution.addTwoNumbers(edge_case_1, edge_case_2)
 
-# We first need to create the Linked List, as we only have the solution and ListNode
-
-print(solution_instance.addTwoNumbers(data_case_1, data_case_2))
-
-# Test case 2
-data_case_3 = [0]
-data_case_4 = [0]
-
-# print(solution_instance.addTwoNumbers(data_case_3, data_case_4))
-
-# Test case 3
-data_case_5 = [9, 9, 9, 9, 9, 9, 9]
-data_case_6 = [9, 9, 9, 9]
-
-# print(solution_instance.addTwoNumbers(data_case_5, data_case_6))
+while edge_case_nodes is not None:
+    print(edge_case_nodes.val)
+    edge_case_nodes = edge_case_nodes.next
