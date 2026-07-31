@@ -27,11 +27,9 @@ class Solution:
         int_of_list_2 = int("".join(map(str, arr_of_list_2)))
 
         # Remaining operations to get the sum of the numbers
-        total_sum_of_linked_lists = int_of_list_1 + int_of_list_2
-
-        reversed_total_sum = str(total_sum_of_linked_lists)[::-1]
-
-        reversed_total_sum_list = [int(digit) for digit in str(reversed_total_sum)]
+        reversed_total_sum_list = [
+            int(digit) for digit in str(str(int_of_list_1 + int_of_list_2)[::-1])
+        ]
 
         head = ListNode(reversed_total_sum_list[0])
         current = head
