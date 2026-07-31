@@ -10,20 +10,17 @@ class Solution:
     ) -> ListNode | None:
 
         # Process the Linked List to get the list of nodes extracted
+        # Then add them in reverse mode directly using 'insert()'
         arr_of_list_1 = []
         arr_of_list_2 = []
 
         while l1 is not None:
-            arr_of_list_1.append(l1.val)
+            arr_of_list_1.insert(0, l1.val)
             l1 = l1.next
 
         while l2 is not None:
-            arr_of_list_2.append(l2.val)
+            arr_of_list_2.insert(0, l2.val)
             l2 = l2.next
-
-        # Reverse order of the arrays to perform the operation
-        arr_of_list_1.reverse()
-        arr_of_list_2.reverse()
 
         # Get the integers of the list
         int_of_list_1 = 0
@@ -52,6 +49,7 @@ class Solution:
         return head.next
 
 
+# Implementing the solution
 solution = Solution()
 
 edge_case_1 = ListNode(5, ListNode(6, None))
