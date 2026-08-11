@@ -12,4 +12,5 @@ dependencies = [
 [tool.uv.workspace]
 members = [
     "projects/habit_tracker",
+    "projects/report_generator",
 ]
