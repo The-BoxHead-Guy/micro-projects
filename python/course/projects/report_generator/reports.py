@@ -1,7 +1,7 @@
 from fpdf import FPDF, XPos, YPos
 
 
-def generar_pdf(df, summaries, output_path):
+def generar_pdf(df, summaries, output_path=None) -> bytes | None:
     pdf = FPDF()
     pdf.add_page()
 
@@ -75,4 +75,8 @@ def generar_pdf(df, summaries, output_path):
         pdf.cell(0, 6, linea, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
     # --- Guardar ---
+    if output_path is None:
+        print("No file path has been provided, returning bytes")
+        return bytes(pdf.output())
+
     pdf.output(output_path)
