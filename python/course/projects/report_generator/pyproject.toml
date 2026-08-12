@@ -9,4 +9,5 @@ dependencies = [
     "jupyter>=1.1.1",
     "lab>=8.10",
     "pandas>=3.0.5",
+    "streamlit>=1.61.1",
 ]
